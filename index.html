@@ -7,13 +7,58 @@
 </head>
 <body>
   <h1>Шифровай свободно!</h1>
-	<form class="myform">
-    <h3>Текст за шифроване</h3>
-      <input type="text" name="cipher">
-    <h3>Ключова дума</h3>
-      <input type="text" name="keyword">
-    <button class="btn">Виж магията-></button>
-  </form>
-	<script type="text/javascript" src=""></script>
+  <div id="inSec">
+ <p id="inputT">Ключова дума</p>
+ <input id="intext" type="text" name="keyword">
+ <button id="subButton" type="button">Submit</button><br>
+	<div id="EDMenu">
+	  <p id="inputT">Select Operation To Proceed: </p>
+	  <button id="encButton0" type="button">Encrypt</button>
+	  <button id="decButton0" type="button">Decrypt</button>
+	</div>
+</div>
+	<script type="text/javascript" src="">
+		"use strict";
+window.addEventListener("load", main);
+
+function main() {
+
+  var userInput = document.getElementById("intext");
+  var submitButton = document.getElementById('subButton');
+  var encButton = document.getElementById('encButton0');
+  var decButton = document.getElementById('decButton0');
+
+  // Encrypt/Decrypt div components
+  var eDMenu = document.getElementById("EDMenu");
+
+  encButton.addEventListener("click", displayEncForm);
+  decButton.addEventListener("click", displayDecForm);
+  submitButton.addEventListener("click", displayOptions);
+
+  function displayEncForm() {
+    // temporarily store the keyword
+    window.sessionStorage.setItem("kw", userInput.value);
+    window.location.href = "encrypt.html";
+  }
+
+  function displayDecForm() {
+    window.sessionStorage.setItem("kw", userInput.value);
+    window.location.href = "decrypt.html";
+  }
+
+
+  function displayOptions() {
+    if ( strip(userInput.value) == "" ) {
+      alert("Please input a keyword.");
+    }
+    else {
+      eDMenu.style.visibility = "visible";
+    }
+  }
+}
+
+
+	</script>
+	<script src="encrypt.js"></script>
 </body>
 </html>
