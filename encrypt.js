@@ -2,7 +2,7 @@
 window.addEventListener("load", setupPage);
 
 function setupPage() {
-  var encButton = document.getElementById("encButton");
+  var encButton = document.getElementById("btn");
   if (encButton != null) {
     encButton.addEventListener("click", encrypt);
   }

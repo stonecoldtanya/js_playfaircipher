@@ -13,8 +13,7 @@
  <button id="subButton" type="button">Submit</button><br>
 	<div id="EDMenu">
 	  <p id="inputT">Select Operation To Proceed: </p>
-	  <button id="encButton0" type="button">Encrypt</button>
-	  <button id="decButton0" type="button">Decrypt</button>
+	  <button id="btn" type="button">Encrypt</button>
 	</div>
 </div>
 	<script type="text/javascript" src="">
@@ -25,14 +24,10 @@ function main() {
 
   var userInput = document.getElementById("intext");
   var submitButton = document.getElementById('subButton');
-  var encButton = document.getElementById('encButton0');
-  var decButton = document.getElementById('decButton0');
-
-  // Encrypt/Decrypt div components
+  var encButton = document.getElementById('btn');
   var eDMenu = document.getElementById("EDMenu");
 
   encButton.addEventListener("click", displayEncForm);
-  decButton.addEventListener("click", displayDecForm);
   submitButton.addEventListener("click", displayOptions);
 
   function displayEncForm() {
@@ -40,12 +35,6 @@ function main() {
     window.sessionStorage.setItem("kw", userInput.value);
     window.location.href = "encrypt.html";
   }
-
-  function displayDecForm() {
-    window.sessionStorage.setItem("kw", userInput.value);
-    window.location.href = "decrypt.html";
-  }
-
 
   function displayOptions() {
     if ( strip(userInput.value) == "" ) {
