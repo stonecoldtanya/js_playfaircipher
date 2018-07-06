@@ -1,4 +1,16 @@
-"use strict";
+  var userInput = document.getElementById("keyword");
+  var submitbtn = document.getElementById('btn');
+  submitbtn.addEventListener("click", mess);
+  function mess() {
+    // temporarily store the keyword
+    if ( strip(userInput.value) == "" ) {
+      alert("Please input a keyword.");
+    }
+    else {
+  	  window.sessionStorage.setItem("kw", userInput.value);
+ 	    window.location.href = "index.html";
+ 	}
+	}
 window.addEventListener("load", setupPage);
 
 function setupPage() {
@@ -260,3 +272,4 @@ function encrypt() {
     }
 
   }
+     

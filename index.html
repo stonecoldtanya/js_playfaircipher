@@ -1,53 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Playfirecipher</title>
-  <style type="text/css" src="style.css"></style>
+<meta charset="utf-8" />
+<title>Playfair cipher</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
 </head>
 <body>
-  <h1>Шифровай свободно!</h1>
-  <div id="inSec">
- <p id="inputT">Ключова дума</p>
- <input id="intext" type="text" name="keyword">
- <button id="subButton" type="button">Submit</button><br>
-	<div id="EDMenu">
-	  <p id="inputT">Select Operation To Proceed: </p>
-	  <button id="btn" type="button">Encrypt</button>
+	<div class="wrapper">
+		<div id="input">
+			<p>Въведи ключова дума и да започваме:</p>
+			<i class="fas fa-moon"></i>
+
+
+			<input id="keyword" type="text" name="keyword">
+			<p class="plaintext">Текст за шифриране:</p>
+			<input id="text" type="text" name="plaintext">
+			<button id="btn">Напред!</button>
+		</div>
+		<div id="output">
+			<p>Моментът на истината</p>
+			<input id="encrypt" type="text" name="">
+		</div>
 	</div>
-</div>
-	<script type="text/javascript" src="">
-		"use strict";
-window.addEventListener("load", main);
-
-function main() {
-
-  var userInput = document.getElementById("intext");
-  var submitButton = document.getElementById('subButton');
-  var encButton = document.getElementById('btn');
-  var eDMenu = document.getElementById("EDMenu");
-
-  encButton.addEventListener("click", displayEncForm);
-  submitButton.addEventListener("click", displayOptions);
-
-  function displayEncForm() {
-    // temporarily store the keyword
-    window.sessionStorage.setItem("kw", userInput.value);
-    window.location.href = "encrypt.html";
-  }
-
-  function displayOptions() {
-    if ( strip(userInput.value) == "" ) {
-      alert("Please input a keyword.");
-    }
-    else {
-      eDMenu.style.visibility = "visible";
-    }
-  }
-}
-
-
+	<script type="text/javascript" src="script.js">
 	</script>
-	<script src="encrypt.js"></script>
 </body>
 </html>
