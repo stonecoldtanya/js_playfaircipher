@@ -24,10 +24,6 @@ html{
 	color: #fff;
 	padding: 5%;
 }
-i{
-	display: inline-block;
-	font-size: 20px;
-}
 input{
 	padding-left: 40px;
 	height: 25px;
